@@ -1,0 +1,7 @@
+{
+  "name": "Luminel",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
