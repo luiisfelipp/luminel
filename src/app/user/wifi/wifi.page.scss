@@ -1,0 +1,39 @@
+.wifi-page {
+    --background: linear-gradient(to bottom, #819cc5, #f1e0e8);
+  
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .logo img {
+      width: 100px;
+      margin: 20px auto;
+    }
+  
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #315182;
+      margin: 20px 0;
+    }
+  
+    ion-list {
+      margin: 20px 0;
+      background: transparent;
+    }
+  
+    ion-item {
+      --background: transparent;
+      --border-color: #d1d1d1;
+      border-bottom: 1px solid var(--border-color);
+    }
+  
+    .connect-button {
+      background-color: #315182;
+      color: #fff;
+      border-radius: 20px;
+      margin-top: 30px;
+    }
+  }
+  

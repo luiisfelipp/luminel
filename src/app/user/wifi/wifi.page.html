@@ -1,0 +1,21 @@
+<ion-content class="wifi-page">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/icon/luminel-logo.svg" alt="Luminel Logo" />
+    </div>
+
+    <!-- Título -->
+    <h2 class="title">Redes WI-FI disponibles</h2>
+
+    <!-- Lista de Redes -->
+    <ion-list>
+      <ion-item *ngFor="let network of networks">
+        <ion-label>{{ network }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!-- Botón de Conexión -->
+    <ion-button expand="block" class="connect-button">Comprobar conexión</ion-button>
+  </div>
+</ion-content>
