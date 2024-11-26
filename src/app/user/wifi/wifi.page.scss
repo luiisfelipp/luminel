@@ -1,5 +1,5 @@
 .wifi-page {
-    --background: linear-gradient(to bottom, #819cc5, #f1e0e8);
+    --background: linear-gradient(to bottom, #8b9dc3, #f5e5e5, #f6c4da);
   
     .container {
       text-align: center;
@@ -30,10 +30,14 @@
     }
   
     .connect-button {
-      background-color: #315182;
-      color: #fff;
-      border-radius: 20px;
+      --background: #f4f0f7; /* Cambiar el color de fondo */
+      --color: #00113e; /* Cambiar el color del texto */
+      --border-radius: 8px; /* Redondear bordes */
+      --background-activated: #d1d4d9; /* Fondo cuando se presiona */
+      --background-hover: #d1d4d9; /* Fondo al pasar el mouse */
+      --box-shadow: none; /* Elimina el borde sombreado predeterminado */
       margin-top: 30px;
+      
     }
   }
   

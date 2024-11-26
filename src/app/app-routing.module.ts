@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./user/wifi/wifi.module').then(m => m.WifiPageModule)
   },
   {
     path: 'login',
@@ -25,7 +25,11 @@ const routes: Routes = [
   {
     path: 'models',
     loadChildren: () => import('./models/models.module').then( m => m.ModelsPageModule)
+  },  {
+    path: 'home',
+    loadChildren: () => import('./user/home/home.module').then( m => m.HomePageModule)
   }
+
 ];
 @NgModule({
   imports: [

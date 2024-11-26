@@ -1,0 +1,111 @@
+.home-container {
+    --background: linear-gradient(to bottom, #8b9dc3, #f5e5e5); /* Fondo con gradiente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: var(--background); /* Asegúrate de que este fondo sea aplicado */
+  }
+  
+  .icon-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 250px; /* Tamaño total del círculo */
+    height: 250px; /* Tamaño total del círculo */
+  }
+  
+  .icon-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Para posicionar los íconos de manera absoluta dentro del contenedor */
+  
+    ion-icon {
+      font-size: 30px;
+      color: #2c4375;
+    }
+  
+    p {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #2c4375;
+    }
+  }
+  
+  /* Distribuir los iconos en círculo */
+  .icon-box:nth-child(1) {
+    transform: rotate(0deg) translate(120px) rotate(0deg);
+  }
+  
+  .icon-box:nth-child(2) {
+    transform: rotate(60deg) translate(120px) rotate(-60deg);
+  }
+  
+  .icon-box:nth-child(3) {
+    transform: rotate(120deg) translate(120px) rotate(-120deg);
+  }
+  
+  .icon-box:nth-child(4) {
+    transform: rotate(180deg) translate(120px) rotate(-180deg);
+  }
+  
+  .icon-box:nth-child(5) {
+    transform: rotate(240deg) translate(120px) rotate(-240deg);
+  }
+  
+  .icon-box:nth-child(6) {
+    transform: rotate(300deg) translate(120px) rotate(-300deg);
+  }
+  
+  /* Botón central "Automatizar" */
+  .central-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    ion-icon {
+      font-size: 50px;
+      color: #2c4375;
+    }
+  
+    p {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #2c4375;
+    }
+  }
+  
+  ion-header {
+    ion-title {
+      font-size: 20px;
+      color: #2c4375;
+    }
+  
+    ion-buttons {
+      ion-button {
+        --color: #2c4375;
+      }
+    }
+  }
+  
