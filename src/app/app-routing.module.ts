@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { EscenariosPageModule } from './user/escenarios/escenarios.module';
+
 
 const routes: Routes = [
   {
@@ -25,15 +27,21 @@ const routes: Routes = [
   {
     path: 'models',
     loadChildren: () => import('./models/models.module').then( m => m.ModelsPageModule)
-  },  {
+  },
+  {
     path: 'home',
     loadChildren: () => import('./user/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'escenarios',
+    loadChildren: () => import('./user/escenarios/escenarios.module').then( m => m.EscenariosPageModule)
   }
 
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    EscenariosPageModule
   ],
   exports: [RouterModule]
 })

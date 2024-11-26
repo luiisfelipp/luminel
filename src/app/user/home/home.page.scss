@@ -21,24 +21,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: #000000;
     padding: 15px;
     border-radius: 50%;
     width: 80px;
     height: 80px;
     text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(247, 244, 244, 0.1);
     position: absolute; /* Para posicionar los íconos de manera absoluta dentro del contenedor */
   
     ion-icon {
       font-size: 30px;
-      color: #2c4375;
+      color: rgb(253, 254, 255);
     }
   
     p {
       margin-top: 5px;
       font-size: 12px;
-      color: #2c4375;
+      color: #ffffff;
     }
   }
   
@@ -73,7 +73,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: #ffffff;
     padding: 20px;
     border-radius: 50%;
     width: 130px;
@@ -86,13 +86,13 @@
     
     ion-icon {
       font-size: 50px;
-      color: #2c4375;
+      color: #000000;
     }
   
     p {
       margin-top: 5px;
       font-size: 12px;
-      color: #2c4375;
+      color: #000000;
     }
   }
   

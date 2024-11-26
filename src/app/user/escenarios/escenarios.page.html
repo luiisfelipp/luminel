@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Escenas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="scenes-container">
+    <!-- Escena Daytime -->
+    <div
+      class="scene"
+      (click)="setActiveScene('daytime')"
+      [ngClass]="{ active: activeScene === 'daytime' }"
+    >
+      <div class="icon-circle">
+        <ion-icon name="sunny-outline"></ion-icon>
+      </div>
+      <p>Daytime</p>
+    </div>
+
+    <!-- Escena Night -->
+    <div
+      class="scene"
+      (click)="setActiveScene('night')"
+      [ngClass]="{ active: activeScene === 'night' }"
+    >
+      <div class="icon-circle">
+        <ion-icon name="moon-outline"></ion-icon>
+      </div>
+      <p>Night</p>
+    </div>
+
+    <!-- Escena Relax -->
+    <div
+      class="scene"
+      (click)="setActiveScene('relax')"
+      [ngClass]="{ active: activeScene === 'relax' }"
+    >
+      <div class="icon-circle">
+        <ion-icon name="bed-outline"></ion-icon>
+      </div>
+      <p>Relax</p>
+    </div>
+  </div>
+</ion-content>
