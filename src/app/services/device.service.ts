@@ -11,6 +11,13 @@ export class DeviceService {
 
   setDeviceLevel(deviceId: string, level: number): void {
     console.log(`Nivel del dispositivo ${deviceId} ajustado a ${level}`);
-    // Lógica para ajustar el nivel del dispositivo
+    // Lógica para ajustar el nivel del dispositivo específico
+  }
+
+  // Nuevo método para ajustar todas las luces
+  setAllDevicesLevel(level: number): void {
+    console.log(`Ajustando todas las luces al nivel: ${level}`);
+    // Lógica para ajustar el nivel de todas las luces
+    // Por ejemplo, podrías recorrer todos los dispositivos y ajustar su brillo.
   }
 }
