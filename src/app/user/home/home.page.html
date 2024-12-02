@@ -1,15 +1,16 @@
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="notifications-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Menú</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
   <div class="home-container">
     <div class="icon-grid">
       <!-- Íconos de las secciones -->
       <div class="icon-box">
-        <ion-icon name="bulb-outline"></ion-icon>
+        <a href="/iluminacion">
+        <ion-icon name="bulb-outline"></ion-icon></a>
         <p>Iluminación</p>
       </div>
       <div class="icon-box">
@@ -22,24 +23,23 @@
       </div>
       <div class="icon-box">
         <a href="/escenarios">
-        <ion-icon name="moon-outline"></ion-icon>
-        <p>Escenarios</p>
-        </a>
+        <ion-icon name="moon-outline"></ion-icon> </a>
+        <p>Escenas</p>
       </div>
       <div class="icon-box">
-        <a href="/login">
-        <ion-icon name="person-outline"></ion-icon>
-        </a>
-      <p>Detección Movimiento</p>
+        <ion-icon name="accessibility-outline"></ion-icon>
+        <p>Movimiento</p> 
       </div>
       <div class="icon-box">
         <ion-icon name="settings-outline"></ion-icon>
-      <p>Ajustes</p>
+        <p>Ajustes</p>
       </div>
       <!-- Botón central -->
       <div class="central-button">
-        <ion-icon name="settings-sharp"></ion-icon>
+        <a href="/automatizacion">
+        <ion-icon name="settings-sharp"></ion-icon></a>
         <p>Automatizar</p>
+        
       </div>
     </div>
   </div>

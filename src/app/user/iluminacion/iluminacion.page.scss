@@ -1,0 +1,43 @@
+ion-content {
+    --background: linear-gradient(to bottom, #dbd294, #fce4ec);
+  
+    .toggle-container {
+      text-align: center;
+      margin: 20px 0;
+  
+      .toggle-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+  
+    .room-list {
+      .room {
+        background-color: rgb(99, 100, 88);
+        color: rgb(250, 250, 250);
+        margin: 15px 15px;
+        padding: 15px;
+        border-radius: 15px;
+  
+        .room-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+  
+          p {
+            margin: 0;
+          }
+  
+          ion-icon {
+            font-size: 24px;
+          }
+        }
+  
+        ion-range {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  

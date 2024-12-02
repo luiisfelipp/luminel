@@ -36,9 +36,11 @@ ion-content {
         color: white;
       }
 
-      ion-content .scene.active .icon-circle {
-        background-color: black !important;
+      ion-content {
+        .scene.active .icon-circle {
+          background-color: black !important;
       }
+    }
     }
   }
   

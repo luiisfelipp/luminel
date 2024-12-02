@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Centro de Iluminación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="toggle-container">
+    <p>Iluminación manual</p>
+    <div class="toggle-buttons">
+      <ion-button (click)="turnAllOn()" color="dark">Encendido</ion-button>
+      <ion-button (click)="turnAllOff()" color="dark">Apagado</ion-button>
+    </div>
+  </div>
+
+  <div class="room-list">
+    <div class="room" *ngFor="let room of rooms">
+      <div class="room-header">
+        <p>{{ room.name }}</p>
+        <div>
+          <p>{{ room.status }}</p>
+          <ion-icon [name]="room.icon"></ion-icon>
+        </div>
+      </div>
+      <ion-range
+        [(ngModel)]="room.brightness"
+        (ionChange)="updateBrightness(room)"
+        min="0"
+        max="100"
+      >
+        <ion-label slot="start">0%</ion-label>
+        <ion-label slot="end">100%</ion-label>
+      </ion-range>
+    </div>
+  </div>
+</ion-content>
