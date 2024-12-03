@@ -18,9 +18,14 @@ export class IluminacionPage implements OnInit {
   constructor(private iluminacionFacade: IluminacionFacadeService) {}
 
   ngOnInit() {
+    // Registrar como observador
+  this.iluminacionFacade.addObserver((message: string) => {
+    console.log('Notificación recibida:', message);
+    // Aquí puedes manejar la actualización de la UI basada en el mensaje
+  });
     // Recuperar la escena activa desde el facade
     this.activeScene = this.iluminacionFacade.getActiveScene();
-    console.log('Escena activa al cargar en Iluminación:', this.activeScene);
+    console.log('Escena activa al cargar:', this.activeScene);
 
     // Si la escena es "relax", activamos ese modo automáticamente al cargar la página
     if (this.activeScene === 'relax') {
@@ -33,9 +38,11 @@ export class IluminacionPage implements OnInit {
 
   // Método para encender todas las luces
   turnAllOn() {
-    this.iluminacionFacade.turnOnAllLights(); // Llamamos al método para encender todas las luces
-    this.updateRoomStatesForAllLights(); // Actualizamos el estado de las habitaciones sin cambiar el brillo
+    console.log('Encendiendo todas las luces desde el componente...');
+    this.iluminacionFacade.turnOnAllLights(); // Llamar al método del Facade
+    this.updateRoomStatesForAllLights();
   }
+  
 
   // Método para apagar todas las luces
   turnAllOff() {

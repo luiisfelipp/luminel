@@ -35,14 +35,20 @@ const routes: Routes = [
   {
     path: 'escenarios',
     loadChildren: () => import('./user/escenarios/escenarios.module').then( m => m.EscenariosPageModule)
-  },  {
+  },
+  {
     path: 'iluminacion',
     loadChildren: () => import('./user/iluminacion/iluminacion.module').then( m => m.IluminacionPageModule)
   },
   {
     path: 'automatizacion',
     loadChildren: () => import('./user/automatizacion/automatizacion.module').then( m => m.AutomatizacionPageModule)
-  }
+  },
+  {
+    path: 'energia',
+    loadChildren: () => import('./user/energia/energia.module').then( m => m.EnergiaPageModule)
+  },
+
 
 
 ];

@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Consumo energético</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="content-wrapper">
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="active">Día</button>
+      <button>Semana</button>
+      <button>Mes</button>
+      <button>Año</button>
+    </div>
+
+    <!-- Indicador de Consumo -->
+    <div class="circle-wrapper">
+      <div class="circle">
+        <p>{{ consumoAcumuladoWh }} kWh</p>
+        <span>utilizados</span>
+      </div>
+    </div>
+
+    <!-- Selector de Dispositivo -->
+    <div class="device-selector">
+      <ion-select
+        placeholder="Selecciona dispositivo"
+        interface="action-sheet"
+        (ionChange)="onDeviceChange($event)"
+      >
+        <ion-select-option value="1">Dispositivo 1</ion-select-option>
+        <ion-select-option value="2">Dispositivo 2</ion-select-option>
+        <ion-select-option value="3">Dispositivo 3</ion-select-option>
+      </ion-select>
+    </div>
+
+    <!-- Límite Diario -->
+    <div class="daily-limit">
+      <p>Límite diario</p>
+      <span>50 kWh</span>
+    </div>
+
+    <!-- Gráfico -->
+    <h3>Consumo energético</h3>
+    <canvas id="energyChart"></canvas>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button (click)="energia()">
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button (click)="control()">
+          <ion-icon name="game-controller-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button (click)="reportes()">
+          <ion-icon name="podium-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button (click)="ajustes()">
+          <ion-icon name="settings-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button (click)="perfil()">
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
