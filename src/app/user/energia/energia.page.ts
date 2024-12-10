@@ -2,6 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { LightingObserver } from '../../services/lighting-observer';
 
 @Component({
   selector: 'app-energia',
@@ -11,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class EnergiaPage implements AfterViewInit {
   private chart: any; 
   consumoAcumuladoWh: number | null = null; // Total acumulado en Wh
-  ipMKR = '192.168.1.2:3000'; // Dirección IP del MKR
+  ipMKR = '192.168.206.53:3000'; 
   intervalId: any; // Intervalo para actualización periódica
   dataPoints: { time: string; consumo: number }[] = []; // Datos para el gráfico
 
@@ -37,22 +38,27 @@ export class EnergiaPage implements AfterViewInit {
     }
   }
 
+  update(consumoAcumuladoWh: number): void {
+    this.consumoAcumuladoWh = consumoAcumuladoWh;
+    this.agregarPuntoAlGrafico(consumoAcumuladoWh);
+}
+
   obtenerConsumo() {
     const url = `http://${this.ipMKR}/consumo`;
     this.http.get<{ consumoAcumuladoWh: number }>(url).subscribe({
-      next: (data) => {
-        if (data.consumoAcumuladoWh >= 0) {
-          this.consumoAcumuladoWh = data.consumoAcumuladoWh;
-          this.agregarPuntoAlGrafico(data.consumoAcumuladoWh);
-        } else {
-          console.warn('Dato inválido recibido del MKR:', data);
-        }
-      },
-      error: (err) => {
-        console.error('Error al conectar con el MKR:', err);
-      },
+        next: (data) => {
+            if (data.consumoAcumuladoWh >= 0) {
+                this.update(data.consumoAcumuladoWh);
+            } else {
+                console.warn('Dato inválido recibido del MKR:', data);
+            }
+        },
+        error: (err) => {
+            console.error('Error al conectar con el MKR:', err);
+        },
     });
-  }
+}
+
 
   agregarPuntoAlGrafico(consumo: number) {
     const currentTime = new Date().toLocaleTimeString();

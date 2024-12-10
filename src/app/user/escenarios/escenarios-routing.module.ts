@@ -4,7 +4,7 @@ import { EscenariosPage } from './escenarios.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'escenarios',
     component: EscenariosPage, // La referencia al componente
   },
 ];

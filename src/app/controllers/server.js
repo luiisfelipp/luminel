@@ -1,58 +1,46 @@
 const express = require('express');
-const five = require('johnny-five');
+const cors = require('cors'); // Habilitar CORS
 const app = express();
-const cors = require('cors');
-const { Board, Led } = require("johnny-five");
 
-app.use(cors({
-  origin: 'http://localhost:8100'  // O usa '*' para permitir solicitudes de todos los orígenes
-}));
+// Middleware
+app.use(cors()); // Permite todas las solicitudes de cualquier origen
+app.use(express.json()); // Permite parsear el cuerpo de las solicitudes como JSON
 
-let led; // Declarar la variable para el LED fuera del evento "ready"
-let consumoAcumuladoWh = 0; // Variable para almacenar el consumo acumulado
+// Variables globales
+let ledState = "off";
+let consumoAcumuladoWh = 50.45;
 
-// Crear el objeto board y conectar con el puerto correcto
-const board = new Board({
-  port: "COM8" // Cambia este puerto por el que corresponde en tu sistema
-});
-
-board.on("ready", function() {
-  led = new Led(10); // Inicializar el LED en el pin 10 cuando el board esté listo
-  console.log('Board listo');
-
-  // Simular el aumento de consumo cada segundo
-  setInterval(() => {
-    consumoAcumuladoWh += Math.random() * 0.1;  // Simula el consumo aumentando de forma aleatoria
-    console.log(`Consumo acumulado: ${consumoAcumuladoWh.toFixed(2)} Wh`);
-  }, 1000); // Actualiza el consumo cada segundo
-});
-
-// Ruta para encender el LED
+// Rutas
 app.get('/light/led/on', (req, res) => {
-  if (led) {
-    led.on();  // Encender el LED
-    console.log('LED encendido');
-    res.status(200).send('LED encendido');
-  } else {
-    res.status(500).send('No se pudo encender el LED');
-  }
+  ledState = "on";
+  console.log('LED encendido - Respuesta enviada al cliente');
+  res.status(200).send('LED encendido');
 });
 
-// Ruta para apagar el LED
 app.get('/light/led/off', (req, res) => {
-  if (led) {
-    led.off();  // Apagar el LED
-    console.log('LED apagado');
-    res.status(200).send('LED apagado');
-  } else {
-    res.status(500).send('No se pudo apagar el LED');
-  }
+  ledState = "off";
+  console.log('LED apagado - Respuesta enviada al cliente');
+  res.status(200).send('LED apagado');
 });
 
-// Ruta para obtener el consumo acumulado
+// Ruta para generar consumo aleatorio
 app.get('/consumo', (req, res) => {
-  // Responder con el consumo acumulado en formato JSON
-  res.status(200).json({ consumoAcumuladoWh: consumoAcumuladoWh.toFixed(2) });
+  // Generar un valor aleatorio para consumo acumulado
+  consumoAcumuladoWh = Math.round(Math.random() * 100); 
+  console.log(`Consumo generado: ${consumoAcumuladoWh} Wh`);
+  
+  res.status(200).json({ consumoAcumuladoWh });
+});
+
+// Manejador de rutas no encontradas (al final de todas las rutas definidas)
+app.use((req, res) => {
+  res.status(404).send('Ruta no encontrada.');
+});
+
+// Manejador de errores global
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Algo salió mal en el servidor.');
 });
 
 // Iniciar el servidor en el puerto 3000

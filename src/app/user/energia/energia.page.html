@@ -13,14 +13,6 @@
 </ion-header>
 <ion-content>
   <div class="content-wrapper">
-    <!-- Tabs -->
-    <div class="tabs">
-      <button class="active">Día</button>
-      <button>Semana</button>
-      <button>Mes</button>
-      <button>Año</button>
-    </div>
-
     <!-- Indicador de Consumo -->
     <div class="circle-wrapper">
       <div class="circle">
@@ -36,16 +28,16 @@
         interface="action-sheet"
         (ionChange)="onDeviceChange($event)"
       >
-        <ion-select-option value="1">Dispositivo 1</ion-select-option>
-        <ion-select-option value="2">Dispositivo 2</ion-select-option>
-        <ion-select-option value="3">Dispositivo 3</ion-select-option>
+        <ion-select-option value="1">Arduino MKR 1010 WiFi</ion-select-option>
+        <ion-select-option value="2">-</ion-select-option>
+        <ion-select-option value="3">-</ion-select-option>
       </ion-select>
     </div>
 
     <!-- Límite Diario -->
     <div class="daily-limit">
       <p>Límite diario</p>
-      <span>50 kWh</span>
+      <span>75 kWh</span>
     </div>
 
     <!-- Gráfico -->
@@ -54,7 +46,7 @@
   </div>
 </ion-content>
 
-<ion-footer>
+<!-- <ion-footer>
   <ion-toolbar>
     <ion-tabs>
       <ion-tab-bar slot="bottom">
@@ -76,4 +68,4 @@
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->

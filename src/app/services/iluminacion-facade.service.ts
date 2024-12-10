@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SceneService } from './scene.service';
 import { DeviceService } from './device.service';
-import { LightingSubject } from './subject';
+import { LightingSubject } from './lighting-subject';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class IluminacionFacadeService {
   private lightingSubject = new LightingSubject();
   private activeSceneKey = 'activeScene';
-  private serverUrl = 'http://192.168.1.2:3000';
+  private serverUrl = 'http://192.168.206.53';
   private isRequestInProgress = false; // Variable para controlar las solicitudes
 
 
@@ -119,6 +119,7 @@ export class IluminacionFacadeService {
     this.lightingSubject.removeObserver(observer);
   }
 
+  //FUNCIÓN PARA PRENDER EL LED
   turnOnLed(): void {
     if (this.isRequestInProgress) return;
   
