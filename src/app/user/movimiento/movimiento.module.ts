@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AutomatizacionPageRoutingModule } from './automatizacion-routing.module';
+import { MovimientoPageRoutingModule } from './movimiento-routing.module';
 
-import { AutomatizacionPage } from './automatizacion.page';
-
+import { MovimientoPage } from './movimiento.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AutomatizacionPageRoutingModule
+    MovimientoPageRoutingModule
   ],
-  declarations: [AutomatizacionPage]
+  declarations: [MovimientoPage]
 })
-export class AutomatizacionPageModule {}
+export class MovimientoPageModule {}

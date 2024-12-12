@@ -35,7 +35,19 @@ const routes: Routes = [
   {
     path: 'energia',
     loadChildren: () => import('./user/energia/energia.module').then( m => m.EnergiaPageModule)
+  },  {
+    path: 'movimiento',
+    loadChildren: () => import('./user/movimiento/movimiento.module').then( m => m.MovimientoPageModule)
   },
+  {
+    path: 'ajustes',
+    loadChildren: () => import('./user/ajustes/ajustes.module').then( m => m.AjustesPageModule)
+  },
+  {
+    path: 'eventos',
+    loadChildren: () => import('./user/eventos/eventos.module').then( m => m.EventosPageModule)
+  },
+
 
 
 

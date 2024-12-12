@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detección de movimiento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="titulo">
+  <p>No se ha detectado movimiento</p>
+  </div>
+  <div class="contenido">
+    
+    <div class="movimiento-lista" *ngFor="let section of sections">
+        <div class="header-movimiento">
+        <ion-icon name="person"></ion-icon>
+        <p>{{ section.title }}  -></p></div>
+        <div class="status">
+      <p>{{ section.status }}</p></div>
+
+    </div>
+  </div>
+</ion-content>
