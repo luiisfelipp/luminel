@@ -10,7 +10,7 @@ import { IluminacionFacadeService } from 'src/app/services/iluminacion-facade.se
 })
 export class AutomatizacionPage {
   wifiConfig: { ssid: string; password: string } | null = null;
-
+  isActive: boolean = false;
   constructor() {
     // Obtener la instancia del Singleton
     const networkService = NetworkService.getInstance();
@@ -21,6 +21,9 @@ export class AutomatizacionPage {
     // Obtener la configuración guardada
     this.wifiConfig = networkService.getWifiConfig();
     console.log('Configuración actual:', this.wifiConfig);
+  }
+  toggleButton(): void {
+    this.isActive = !this.isActive;
   }
 }
 

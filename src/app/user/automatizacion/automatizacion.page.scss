@@ -35,5 +35,17 @@ ion-content {
         margin: 0 20px;
       }
     }
+    ion-button {
+      --background: transparent; /* Fondo transparente por defecto */
+      --color: #666; /* Color inicial del ícono */
+    
+      &.active-icon {
+        --color: #f2b83c; /* Cambia el color del ícono al estar activo */
+       }
+    
+      ion-icon {
+        font-size: 70px; /* Tamaño del ícono */
+      }
+    }
   }
   

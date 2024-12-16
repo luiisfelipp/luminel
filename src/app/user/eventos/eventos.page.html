@@ -1,13 +1,96 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>eventos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Eventos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">eventos</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="event-section">
+    <!-- Se activa -->
+    <div class="event-card">
+      <div class="event-header">
+        <span>Se activa</span>
+        <span>{{ activationTime }}</span>
+      </div>
+      <div class="event-body">
+        <!-- Días de la semana -->
+        <div class="week-days">
+          <button
+            *ngFor="let day of activationDays"
+            [ngClass]="{ selected: day.selected }"
+            (click)="toggleActivationDay(day)"
+          >
+            {{ day.label }}
+          </button>
+        </div>
+
+        <!-- Hora -->
+        <div class="time-picker">
+          <label>Hora</label>
+          <ion-datetime
+            presentation="time"
+            [(ngModel)]="activationTime"
+            (ionChange)="onActivationTimeChange($event)"
+          ></ion-datetime>
+        </div>
+      </div>
+    </div>
+
+    <!-- Se desactiva -->
+    <div class="event-card">
+      <div class="event-header">
+        <span>Se desactiva</span>
+        <span>{{ deactivationTime }}</span>
+      </div>
+      <div class="event-body">
+        <!-- Días de la semana -->
+        <div class="week-days">
+          <button
+            *ngFor="let day of deactivationDays"
+            [ngClass]="{ selected: day.selected }"
+            (click)="toggleDeactivationDay(day)"
+          >
+            {{ day.label }}
+          </button>
+        </div>
+
+        <!-- Hora -->
+        <div class="time-picker">
+          <label>Hora</label>
+          <ion-datetime
+            presentation="time"
+            [(ngModel)]="deactivationTime"
+            (ionChange)="onDeactivationTimeChange($event)"
+          ></ion-datetime>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-button expand="block" class="finish-button" (click)="onFinish()">
+    Terminado
+  </ion-button>
+
+  <!-- Resultados de la selección -->
+  <div class="resultados" *ngIf="selectedActivationDay || selectedDeactivationDay">
+    <div class="event-scheduled-header">
+      <p><strong>Evento programado: ✓✓✓</strong></p>
+    </div>
+  
+    <div class="event-details">
+      <p><strong>Día de activación: </strong> <span>{{ selectedActivationDay }}</span></p>
+      <p><strong>Hora de activación: </strong> <span>{{ selectedActivationTime }}</span></p>
+      <p><strong>Día de desactivación: </strong> <span>{{ selectedDeactivationDay }}</span></p>
+      <p><strong>Hora de desactivación: </strong> <span>{{ selectedDeactivationTime }}</span></p>
+    </div>
+  </div>
 </ion-content>
+

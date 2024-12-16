@@ -1,0 +1,105 @@
+ion-content {
+    --background: linear-gradient(to bottom, #ffffff, #fac5d7);
+  
+    .event-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+  
+    .event-card {
+      background: #000;
+      border-radius: 10px;
+      padding: 15px;
+      color: #fff;
+  
+      .event-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+  
+      .event-body {
+        .week-days {
+          display: flex;
+          justify-content: space-around;
+          margin-bottom: 10px;
+  
+          button {
+            background: #333;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
+            cursor: pointer;
+  
+            &.selected {
+              background: #4caf50;
+            }
+          }
+        }
+  
+        .time-picker {
+          label {
+            font-size: 14px;
+            color: #ccc;
+          }
+  
+          ion-datetime {
+            width: 100%;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  
+    .finish-button {
+      --background: #000;
+      --color: #eecfcf;
+      border-radius: 5px;
+    }
+
+    .resultados {
+        background-color: #e8e4db;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px 20px;
+      }
+      
+      .event-scheduled-header {
+        text-align: center;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        color: #333;
+      }
+      
+      .event-details {
+        font-size: 1em;
+        line-height: 1.5;
+        color: #555;
+      }
+      
+      .event-details p {
+        margin: 8px 0;
+      }
+      
+      .event-details strong {
+        color: #000000;  /* Puedes ajustar el color según tu tema */
+      }
+      
+      .event-details span {
+        font-weight: bold;
+        color: #333;
+      }
+      
+      .event-details p:last-child {
+        margin-bottom: 0;
+      }
+  }
+  

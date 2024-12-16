@@ -15,10 +15,16 @@
 <ion-content>
   <div class="automation-container">
     <div class="icon-circle">
+      <ion-button 
+      fill="clear" 
+      [ngClass]="{ 'active-icon': isActive }" 
+      (click)="toggleButton()">
       <ion-icon name="settings-sharp"></ion-icon>
+    </ion-button>
     </div>
-    <h2>Automatización de Iluminación</h2>
-    <p>Controla y ajusta la iluminación de tus espacios fácilmente.</p>
+    <h2>{{ isActive ? 'Entorno automatizado' : 'Automatización de Iluminación' }}</h2>
+    <p>{{ isActive ? 'La automatización está activa' : 'Controla y ajusta la iluminación de tus espacios fácilmente' }}</p>
+    
   </div>
 </ion-content>
   <!-- SINGLETON APLICADO-->
