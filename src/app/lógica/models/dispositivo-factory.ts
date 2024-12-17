@@ -1,5 +1,3 @@
-// models/dispositivo-factory.ts
-
 import { Dispositivo, Luz, SensorMovimiento, Termostato } from './dispositivo.model';
 
 export class DispositivoFactory {

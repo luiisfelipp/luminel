@@ -1,5 +1,3 @@
-// models/dispositivo.model.ts
-
 export abstract class Dispositivo {
     constructor(public id: string, public nombre: string) {}
   

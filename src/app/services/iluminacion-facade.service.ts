@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class IluminacionFacadeService {
   private lightingSubject = new LightingSubject();
   private activeSceneKey = 'activeScene';
-  private serverUrl = 'http://192.168.206.53';
+  private serverUrl = 'http://192.168.1.17';
   private isRequestInProgress = false; // Variable para controlar las solicitudes
 
 
