@@ -2,7 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { LightingObserver } from '../../services/lighting-observer';
+import { LightingObserver } from '../../lógica/models/lighting-observer';
 
 @Component({
   selector: 'app-energia',
@@ -12,7 +12,7 @@ import { LightingObserver } from '../../services/lighting-observer';
 export class EnergiaPage implements AfterViewInit {
   private chart: any; 
   consumoAcumuladoWh: number | null = null; // Total acumulado en Wh
-  ipMKR = '192.168.206.53:3000'; 
+  ipMKR = '192.168.1.17:3000'; 
   intervalId: any; // Intervalo para actualización periódica
   dataPoints: { time: string; consumo: number }[] = []; // Datos para el gráfico
 
@@ -28,7 +28,7 @@ export class EnergiaPage implements AfterViewInit {
   iniciarActualizacion() {
     this.intervalId = setInterval(() => {
       this.obtenerConsumo();
-    }, 10000); // Actualiza cada 10 segundos
+    }, 1000); // Actualiza cada 10 segundos
   }
 
   detenerActualizacion() {

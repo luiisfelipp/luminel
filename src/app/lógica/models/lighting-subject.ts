@@ -1,4 +1,4 @@
-import { Observer } from '../models/observer.interface';
+import { Observer } from './observer.interface';
 
 export class LightingSubject {
   private observers: Observer[] = [];

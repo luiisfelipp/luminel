@@ -1,0 +1,48 @@
+ion-content {
+    --background: linear-gradient(to bottom, #8b9dc3, #f5e5e5);
+  
+    .settings-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+  
+    .settings-card {
+      border-radius: 10px;
+      padding: 15px;
+      color: #000000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  
+      .card-header {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #000000;
+      }
+  
+      .card-body {
+        ion-item {
+          --background: transparent;
+          --color: #fff;
+          border-bottom: 1px solid #555;
+        }
+  
+        ion-input {
+          --placeholder-color: #202020;
+          color: #000000;
+        }
+  
+        .support-email {
+          font-size: 14px;
+          font-weight: bold;
+          text-align: center;
+        }
+  
+        ion-button {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  

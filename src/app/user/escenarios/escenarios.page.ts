@@ -31,4 +31,10 @@ export class EscenariosPage implements OnInit {
       this.iluminacionFacade.setScene(scene); // Llamada general para otras escenas
     }
   }
+  addNewScene() {
+    console.log('Agregar nueva escena');
+    // Aquí puedes abrir un modal o redirigir a una pantalla de creación de escenas.
+  }
+  
+  
 }

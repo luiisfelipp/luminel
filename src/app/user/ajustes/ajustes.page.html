@@ -1,13 +1,68 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>ajustes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ajustes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ajustes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="settings-section">
+    <!-- Cambiar contraseña -->
+    <div class="settings-card">
+      <div class="card-header">
+        <span>Cambiar contraseña</span>
+      </div>
+      <div class="card-body">
+        <ion-item>
+          <ion-input
+            [(ngModel)]="currentPassword"
+            type="password"
+            placeholder="Contraseña actual"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            [(ngModel)]="newPassword"
+            type="password"
+            placeholder="Nueva contraseña"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            [(ngModel)]="confirmPassword"
+            type="password"
+            placeholder="Confirmar contraseña"
+          ></ion-input>
+        </ion-item>
+        <ion-button expand="block" (click)="changePassword()">Guardar cambios</ion-button>
+      </div>
+    </div>
+
+    <!-- Soporte al cliente -->
+    <div class="settings-card">
+      <div class="card-header">
+        <span>Soporte al cliente</span>
+      </div>
+      <div class="card-body">
+        <p>
+          ¿Tienes algún problema o consulta? Contáctanos a través de nuestro correo de soporte:
+        </p>
+        <ion-item>
+          <ion-label color="primary" class="support-email">
+            support&#64;luminel.com
+          </ion-label>
+        </ion-item>
+        <ion-button expand="block" color="secondary" (click)="contactSupport()">
+          Contactar soporte
+        </ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>

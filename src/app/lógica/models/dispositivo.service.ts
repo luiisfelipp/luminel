@@ -1,8 +1,8 @@
 // services/dispositivo.service.ts
 
 import { Injectable } from '@angular/core';
-import { DispositivoFactory } from '../models/dispositivo-factory';
-import { Dispositivo } from '../models/dispositivo.model';
+import { DispositivoFactory } from './dispositivo-factory';
+import { Dispositivo } from './dispositivo.model';
 
 @Injectable({
   providedIn: 'root',

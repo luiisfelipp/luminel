@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { SceneService } from './scene.service';
-import { DeviceService } from './device.service';
-import { LightingSubject } from './lighting-subject';
+import { SceneService } from '../lógica/controllers/scene.service';
+import { DeviceService } from '../lógica/controllers/device.service';
+import { LightingSubject } from '../lógica/models/lighting-subject';
 import { HttpClient } from '@angular/common/http';
 
 

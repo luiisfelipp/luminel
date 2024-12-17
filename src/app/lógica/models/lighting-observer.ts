@@ -1,4 +1,4 @@
-import { Observer } from '../models/observer.interface';
+import { Observer } from './observer.interface';
 
 export class LightingObserver implements Observer {
   constructor(private name: string) {}

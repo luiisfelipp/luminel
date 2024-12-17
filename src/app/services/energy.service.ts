@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { LightingSubject } from './lighting-subject';
+import { LightingSubject } from '../lógica/models/lighting-subject';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EnergyService extends LightingSubject {
-  private ipMKR = '192.168.206.53:3000';
+  private ipMKR = '192.168.1.17:3000';
 
   constructor(private http: HttpClient) {
     super();

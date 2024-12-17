@@ -10,6 +10,12 @@ app.use(express.json()); // Permite parsear el cuerpo de las solicitudes como JS
 let ledState = "off";
 let consumoAcumuladoWh = 50.45;
 
+// Actualizar el consumo automáticamente cada 5 segundos
+setInterval(() => {
+  consumoAcumuladoWh = Math.round(Math.random() * 20 + 45); 
+  console.log(`Nuevo consumo generado automáticamente: ${consumoAcumuladoWh} Wh`);
+}, 1000); 
+
 // Rutas
 app.get('/light/led/on', (req, res) => {
   ledState = "on";
@@ -23,12 +29,9 @@ app.get('/light/led/off', (req, res) => {
   res.status(200).send('LED apagado');
 });
 
-// Ruta para generar consumo aleatorio
+// Ruta para obtener el consumo actual
 app.get('/consumo', (req, res) => {
-  // Generar un valor aleatorio para consumo acumulado
-  consumoAcumuladoWh = Math.round(Math.random() * 100); 
-  console.log(`Consumo generado: ${consumoAcumuladoWh} Wh`);
-  
+  console.log(`Consumo actual enviado al cliente: ${consumoAcumuladoWh} Wh`);
   res.status(200).json({ consumoAcumuladoWh });
 });
 
